@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="IMS_UI_Assignment.Views.UserControls.InputField"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IMS_UI_Assignment.Views.UserControls"
+             mc:Ignorable="d" 
+             Height="35" Width="330">
+    <Border CornerRadius="10"
+    BorderThickness="0"
+    HorizontalAlignment="Stretch"
+    Background="LightGray">
+        <Grid Background="Transparent" >
+            <TextBox x:Name="InputTextBox"
+             Background="Transparent"
+             BorderThickness="0"
+             FontSize="16"
+             Margin="5,0,0,0"
+             VerticalAlignment="Center"
+             TextChanged="InputTextBox_TextChanged"
+             />
+
+
+            <TextBlock x:Name="TBPlaceholder"
+           VerticalAlignment="Center"
+           FontSize="16"
+           Margin="5,0,0,0"
+           Foreground="Gray"
+           Text="{Binding Placeholder, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"
+               Panel.ZIndex="-1"/>
+        </Grid>
+    </Border>
+</UserControl>

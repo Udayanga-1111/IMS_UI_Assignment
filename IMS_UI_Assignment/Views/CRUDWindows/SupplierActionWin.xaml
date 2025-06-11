@@ -1,0 +1,118 @@
+﻿<Window x:Class="IMS_UI_Assignment.Views.CRUDWindows.SupplierActionWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:userControls="clr-namespace:IMS_UI_Assignment.Views.UserControls"
+        xmlns:local="clr-namespace:IMS_UI_Assignment.Views.CRUDWindows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Background="#2B2B2B"
+        Title="SupplierActionWin" ResizeMode="NoResize" Height="250" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="10,10,0,0"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch">
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Supplier Id :"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"/>
+
+                        <userControls:InputField x:Name="supplierIdInput"
+                                                 Width="200"
+                                                 Height="30"
+                                                 Margin="10,0,0,0"
+                                                 FontSize="16"
+                                                 Foreground="White"
+                                                 Background="#3B3B3B"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,10,0,0">
+                        <TextBlock Text="Supplier Name :"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"/>
+
+                        <userControls:InputField x:Name="supplierNameInput"
+                                                 Width="200"
+                                                 Height="30"
+                                                 Margin="10,0,0,0"
+                                                 FontSize="16"
+                                                 Foreground="White"
+                                                 Background="#3B3B3B"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+            Margin="0,10,0,0">
+                        <TextBlock Text="Product Name :"
+               FontSize="16"
+               VerticalAlignment="Center"
+               Foreground="White"/>
+
+                        <userControls:InputField x:Name="productNameInput"
+                             Width="200"
+                             Height="30"
+                             Margin="10,0,0,0"
+                             FontSize="16"
+                             Foreground="White"
+                             Background="#3B3B3B"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Border Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0"
+                        VerticalAlignment="Top"
+                        Width="150"
+                        Height="150"
+                        CornerRadius="10"
+                        Background="#9c9c9c">
+
+                </Border>
+            </Grid>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1"
+                    Width="Auto"
+                    Height="40">
+            <Border Style="{StaticResource HoverBorderStyle}"
+                    CornerRadius="15"
+                    Width="100"
+                    Height="30">
+                <Button x:Name="Save"
+                                     VerticalAlignment="Stretch"
+                                     HorizontalAlignment="Center"
+                                     Content="Save"
+                                     HorizontalContentAlignment="Center"
+                                     Width="100"/>
+            </Border>
+            <Border Style="{StaticResource HoverBorderStyle}"
+                    CornerRadius="15"
+                    Width="100"
+                    Height="30"
+                    Margin="10,0,0,0">
+
+                <Button x:Name="Discard"
+                                     Content="Discard"
+                                     Foreground="Red"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Stretch"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

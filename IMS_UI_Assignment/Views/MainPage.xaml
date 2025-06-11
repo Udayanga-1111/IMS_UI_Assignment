@@ -1,0 +1,101 @@
+﻿<Page x:Class="IMS_UI_Assignment.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:IMS_UI_Assignment.Views"
+    mc:Ignorable="d" 
+    d:DesignHeight="850" d:DesignWidth="1500"
+    Title="MainPage"
+      Loaded="Page_Loaded">
+
+    <Grid Background="#111111">
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="150*"/>
+          <ColumnDefinition Width="521*"/>
+      </Grid.ColumnDefinitions>
+
+      <Border Background="#2B2B2B"
+              CornerRadius="0 ,25, 25, 0"
+              BorderThickness="0">
+          <Grid>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="2*"/>
+                  <RowDefinition Height="3*"/>
+                  <RowDefinition Height="1*"/>
+              </Grid.RowDefinitions>
+
+              <Grid>
+                  <StackPanel Height="auto"
+                              VerticalAlignment="Center">
+                      <Image Name="myImage" Width="100" Height="100" Stretch="Uniform"/>
+                      <StackPanel Width="auto"
+                                  HorizontalAlignment="Center">
+                          <TextBlock x:Name="welcomeMssg"
+                                     Foreground="White"
+                                     TextAlignment="Center"
+                                     FontSize="24"
+                                     HorizontalAlignment="Center"/>
+
+                          <TextBlock Text="Welcome to the IMS !"
+                                     Foreground="White"
+                                     TextAlignment="Center"
+                                     FontSize="24"
+                                     HorizontalAlignment="Center"/>
+                      </StackPanel>
+                  </StackPanel>
+              </Grid>
+              <Grid Grid.Row="1">
+                  <StackPanel VerticalAlignment="Center">
+                        <Border x:Name="dashBorder"
+                                CornerRadius="10">
+                            <Button x:Name="dashboardBtn" Width="Auto" Click="dashboardBtn_Click" Content="Dashboard" FontSize="24" Background="Transparent" BorderThickness="0"/>
+                      </Border>
+
+                      <Border CornerRadius="10">
+                          <Button x:Name="usersBtn" Content="Users" Width="200" Margin="0, 10" FontSize="24" Background="Transparent" BorderThickness="0" Click="usersBtn_Click"/>
+                      </Border>
+
+                      <Border CornerRadius="10">
+                          <Button x:Name="productsBtn" Content="Products" Width="200" Margin="0, 10" FontSize="24" Background="Transparent" BorderThickness="0" Click="productsBtn_Click"/>
+                      </Border>
+
+                      <Border CornerRadius="10">
+                          <Button x:Name="suppliersBtn" Content="Suppliers" Width="200" Margin="0, 10" FontSize="24" Background="Transparent" BorderThickness="0" Click="suppliersBtn_Click"/>
+                      </Border>
+
+                        <Border CornerRadius="10">
+                            <Button x:Name="OrdersBtn" Content="Orders" Width="200" Margin="0, 10" FontSize="24" Background="Transparent" BorderThickness="0" Click="OrdersBtn_Click"/>
+                        </Border>
+
+                        <Border CornerRadius="10">
+                          <Button x:Name="reportsBtn" Content="Reports" Width="200" Margin="0, 10" FontSize="24" Background="Transparent" BorderThickness="0" Click="reportsBtn_Click"/>
+                      </Border>
+                  </StackPanel>
+              </Grid>
+
+              <Grid Grid.Row="2">
+                  <Button x:Name="Logout"
+                          Content="Logout"
+                          Foreground="Red"
+                          FontSize="24"
+                          VerticalAlignment="Center"
+                          Background="Transparent"
+                          BorderThickness="0"
+                          Click="Logout_Click"/>
+              </Grid>
+          </Grid>
+      </Border>
+      <Border 
+          Grid.Column="1"
+              Background="#2B2B2B"
+              CornerRadius="25"
+              Margin="10,0,0,0"
+              BorderThickness="0" Grid.ColumnSpan="2">
+          <Frame x:Name="Main"
+             NavigationUIVisibility="Hidden">
+
+          </Frame>
+      </Border>
+  </Grid>
+</Page>

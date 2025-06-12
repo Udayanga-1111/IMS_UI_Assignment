@@ -1,4 +1,4 @@
-﻿using IMS_UI_Assignment.Controlers;
+﻿using IMS_UI_Assignment.Controllers;
 using IMS_UI_Assignment.Models;
 using System.Windows;
 

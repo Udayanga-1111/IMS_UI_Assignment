@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="#2B2B2B"
-        Title="UserActionWin" ResizeMode="NoResize" Height="250" Width="600">
+        Title="UserActionWin" ResizeMode="NoResize" Height="220" Width="620">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,10 +16,6 @@
         </Grid.RowDefinitions>
         <Grid>
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
 
                 <StackPanel Margin="10,10,0,0"
                             VerticalAlignment="Stretch"
@@ -28,78 +24,111 @@
 
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="First Name :"
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="User Id :"
                                    FontSize="16"
                                    VerticalAlignment="Center"
                                    Foreground="White"/>
 
-                        <userControls:InputField x:Name="firstNameInput"
+                            <userControls:InputField x:Name="userIdInput"
                                                  Width="200"
                                                  Height="30"
                                                  Margin="10,0,0,0"
                                                  FontSize="16"
                                                  Foreground="White"
                                                  Background="#3B3B3B"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"
+Margin="10,0,0,0">
+                            <TextBlock Text="User Role :"
+   FontSize="16"
+   VerticalAlignment="Center"
+   Foreground="White"/>
+
+                            <ComboBox x:Name="UserRoleComboBox" Width="150" Height="30"  Margin="10,0,0,0">
+                                <ComboBoxItem>Admin</ComboBoxItem>
+                                <ComboBoxItem>Manager</ComboBoxItem>
+                                <ComboBoxItem>Cashier</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,10,0,0">
-                        <TextBlock Text="Username :"
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="First Name :"
                                    FontSize="16"
                                    VerticalAlignment="Center"
                                    Foreground="White"/>
 
-                        <userControls:InputField x:Name="usernameInput"
+                            <userControls:InputField x:Name="firstNameInput"
+                                                 Width="200"
+                                                 Height="30"
+                                                 Margin="10,0,0,0"
+                                                 FontSize="16"
+                                                 Foreground="White"
+                                                 Background="#3B3B3B"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"
+                                        Margin="10 0 0 0">
+                            <TextBlock Text="last Name :"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"/>
+
+                            <userControls:InputField x:Name="lastNameInput"
+                                                 Width="200"
+                                                 Height="30"
+                                                 Margin="10,0,0,0"
+                                                 FontSize="16"
+                                                 Foreground="White"
+                                                 Background="#3B3B3B"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 10 0 0">
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Username :"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"/>
+
+                            <userControls:InputField x:Name="usernameInput"
                              Width="200"
                              Height="30"
                              Margin="10,0,0,0"
                              FontSize="16"
                              Foreground="White"
                              Background="#3B3B3B"/>
-                    </StackPanel>
-                    
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0,10,0,0">
-                        <TextBlock Text="Password :"
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"
+                                Margin="10,0,0,0">
+                            <TextBlock Text="Password :"
                                    FontSize="16"
                                    VerticalAlignment="Center"
                                    Foreground="White"/>
 
-                        <userControls:PasswordInputField x:Name="userPasswordInput"
+                            <userControls:PasswordInputField x:Name="userPasswordInput"
                                                  Width="200"
                                                  Height="30"
                                                  Margin="10,0,0,0"
                                                  FontSize="16"
                                                  Foreground="White"
                                                  Background="#3B3B3B"/>
+                        </StackPanel>
+
                     </StackPanel>
-
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0,10,0,0">
-                        <TextBlock Text="User Role :"
-                                   FontSize="16"
-                                   VerticalAlignment="Center"
-                                   Foreground="White"/>
-
-                        <ComboBox x:Name="UserRoleComboBox" Width="150" Height="30"  Margin="10,0,0,0">
-                            <ComboBoxItem>Admin</ComboBoxItem>
-                            <ComboBoxItem>Manager</ComboBoxItem>
-                            <ComboBoxItem>Cashier</ComboBoxItem>
-                        </ComboBox>
-                    </StackPanel>
-
                 </StackPanel>
-
-                <Border Grid.Column="1"
-                        HorizontalAlignment="Center"
-                        Margin="0,10,0,0"
-                        VerticalAlignment="Top"
-                        Width="150"
-                        Height="150"
-                        CornerRadius="10"
-                        Background="#9c9c9c">
-
-                </Border>
             </Grid>
         </Grid>
 
@@ -129,7 +158,8 @@
                                      Content="Discard"
                                      Foreground="Red"
                                      HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Stretch"/>
+                                     VerticalContentAlignment="Stretch"
+                        Click="Discard_Click"/>
             </Border>
         </StackPanel>
     </Grid>

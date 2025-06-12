@@ -67,15 +67,13 @@
 
             <!-- Add the Data Grid or List Here for display users -->
             <Grid Grid.Row="2">
-                <Grid x:Name="MainGrid">
-                    <Border CornerRadius="15"
+                <Border CornerRadius="15"
                         Padding="10"
                         Background="#4c4c4c"
                         VerticalAlignment="Top">
                         <DataGrid x:Name="OrderDataGrid" SelectionChanged="OrderDataGrid_SelectionChanged" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" AutoGenerateColumns="True" CanUserSortColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedOrder}"/>
                     </Border>
                 </Grid>
-            </Grid>
         </Grid>
     </Grid>
 </Page>

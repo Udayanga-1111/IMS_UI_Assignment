@@ -1,4 +1,4 @@
-﻿using IMS_UI_Assignment.Controlers;
+﻿using IMS_UI_Assignment.Controllers;
 using IMS_UI_Assignment.Models;
 using IMS_UI_Assignment.Views.CRUDWindows;
 using System.Windows;
@@ -8,38 +8,32 @@ namespace IMS_UI_Assignment.Views
 {
     public partial class SubPage_RestockingOrders : Page
     {
-        private OrderControler orderControler;
+        private OrderController orderController;
         private Order selectedOrder;
 
         public SubPage_RestockingOrders()
         {
             InitializeComponent();
-            orderControler = new OrderControler();
+            orderController = new OrderController();
             LoadOrders();
         }
 
         private void LoadOrders()
         {
-            var orderList = orderControler.GetAllOrders();
+            var orderList = orderController.GetAllOrders();
             OrderDataGrid.ItemsSource = orderList;
         }
 
         private void addOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            // No need for GlobalVariables here. The context is clear.
             OrderCreateWin orderCreateWin = new OrderCreateWin();
 
-            // Show the window and wait for it to close.
-            // If it closed with DialogResult = true, it means the user clicked "Save".
             if (orderCreateWin.ShowDialog() == true)
             {
-                // Get the new order object from the window's public property
                 Order newOrder = orderCreateWin.Order;
 
-                // Tell the controller to save it
-                orderControler.CreateOrder(newOrder);
+                orderController.CreateOrder(newOrder);
 
-                // Refresh the grid to show the new data
                 LoadOrders();
             }
         }
@@ -72,8 +66,7 @@ namespace IMS_UI_Assignment.Views
             editWindow.OrderIdInput.InputTextBox.IsReadOnly = true;
             if (editWindow.ShowDialog() == true)
             {
-                // The 'editWindow.Order' property now holds the updated values
-                orderControler.UpdateOrder(editWindow.Order);
+                orderController.UpdateOrder(editWindow.Order);
                 LoadOrders();
             }
         }
@@ -89,7 +82,7 @@ namespace IMS_UI_Assignment.Views
             var result = MessageBox.Show($"Are you sure you want to delete the order '{selectedOrder._orderName}'?", "Confirm Deletion", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (result == MessageBoxResult.Yes)
             {
-                orderControler.DeleteOrder(selectedOrder._orderId);
+                orderController.DeleteOrder(selectedOrder._orderId);
                 LoadOrders();
             }
         }

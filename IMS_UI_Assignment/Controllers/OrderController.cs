@@ -3,9 +3,9 @@ using System.Collections.ObjectModel;
 using Microsoft.Data.SqlClient;
 using System.Windows;
 
-namespace IMS_UI_Assignment.Controlers
+namespace IMS_UI_Assignment.Controllers
 {
-    public class OrderControler
+    public class OrderController
     {
         private readonly string _connectionString = "Data Source=LAPTOP-J2V071AF\\SQLEXPRESS;Initial Catalog=IMS_GameStore;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
@@ -15,7 +15,6 @@ namespace IMS_UI_Assignment.Controlers
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                // It's safer to parse integers from the reader directly, not from strings
                 string query = "SELECT orderId, orderName, productName, supplier, Quantity FROM OrderTable";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -24,7 +23,6 @@ namespace IMS_UI_Assignment.Controlers
                 {
                     var order = new Order
                     {
-                        // Assuming the columns are in this order and of the correct type
                         _orderId = int.Parse(reader.GetString(0).Trim()),
                         _orderName = reader.GetString(1).Trim(),
                         _productName = reader.GetString(2).Trim(),
@@ -37,11 +35,8 @@ namespace IMS_UI_Assignment.Controlers
             return orderslist;
         }
 
-        // CORRECTED: The method now accepts an Order object
         public void CreateOrder(Order order)
         {
-            // Input validation happens before this method is called,
-            // or you can add it here by checking the passed object.
             if (order == null || string.IsNullOrWhiteSpace(order._orderName) || string.IsNullOrWhiteSpace(order._productName) || string.IsNullOrWhiteSpace(order._supplier))
             {
                 MessageBox.Show("Order details are incomplete.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

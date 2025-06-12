@@ -67,7 +67,19 @@
             
             <!-- Add the Data Grid or List Here for display users -->
             <Grid Grid.Row="2">
-                <DataGrid x:Name="UsersDataGrid" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" ItemsSource="{Binding Users}" AutoGenerateColumns="True" SelectionChanged="DataGrid_SelectionChanged" CanUserSortColumns="False" IsReadOnly="True"/>
+                <Border CornerRadius="15"
+                        Padding="10"
+                        Background="#4c4c4c"
+                        VerticalAlignment="Top">
+                    <DataGrid x:Name="UserDataGrid" SelectionChanged="UserDataGrid_SelectionChanged"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" AutoGenerateColumns="False" CanUserSortColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedUser}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="First Name" Binding="{Binding FName}" Width="*"/>
+                            <DataGridTextColumn Header="Last Name" Binding="{Binding LName}" Width="*"/>
+                            <DataGridTextColumn Header="User Role" Binding="{Binding UserRole}" Width="120"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

@@ -15,117 +15,99 @@
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
 
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-
                 <StackPanel Margin="10,10,0,0">
-                    
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Product Id :"
-                                   FontSize="16"
-                                   VerticalAlignment="Center"
-                                   Foreground="White"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Product Id :"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"/>
 
-                        <userControls:InputField x:Name="productIdInput"
-                                                 Width="200"
-                                                 Height="30"
-                                                 Margin="10,0,0,0"
-                                                 FontSize="16"
-                                                 Foreground="White"
-                                                 Background="#3B3B3B"/>
-                    </StackPanel>
-                    
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0,10,0,0">
-                        <TextBlock Text="Product Name :"
-                                   FontSize="16"
-                                   VerticalAlignment="Center"
-                                   Foreground="White"/>
-
-                        <userControls:InputField x:Name="productNameInput"
-                                                 Width="200"
-                                                 Height="30"
-                                                 Margin="10,0,0,0"
-                                                 FontSize="16"
-                                                 Foreground="White"
-                                                 Background="#3B3B3B"/>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal"
-            Margin="0,10,0,0">
-                        <TextBlock Text="Product Price :"
-               FontSize="16"
-               VerticalAlignment="Center"
-               Foreground="White"/>
-
-                        <userControls:InputField x:Name="productPriceInput"
-                             Width="200"
-                             Height="30"
-                             Margin="10,0,0,0"
-                             FontSize="16"
-                             Foreground="White"
-                             Background="#3B3B3B"/>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal"
-            Margin="0,10,0,0">
-                        <TextBlock Text="Product Catagory :"
-               FontSize="16"
-               VerticalAlignment="Center"
-               Foreground="White"/>
-
-                        <userControls:InputField x:Name="productCatagoryInput"
-                             Width="200"
-                             Height="30"
-                             Margin="10,0,0,0"
-                             FontSize="16"
-                             Foreground="White"
-                             Background="#3B3B3B"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <Border Grid.Column="1"
-                        HorizontalAlignment="Center"
-                        Margin="0,10,0,0"
-                        VerticalAlignment="Top"
-                        Width="150"
-                        Height="150"
-                        CornerRadius="10"
-                        Background="#9c9c9c">
-                    
-                </Border>
-            </Grid>
-
-            <StackPanel Margin="10,0,0,0"
-                        Grid.Row="1"
-                        Orientation="Horizontal">
-
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Quantity :"
-                                   FontSize="16"
-                                   VerticalAlignment="Center"
-                                   Foreground="White"/>
-
-                    <userControls:InputField x:Name="productQuantityInput"
+                            <userControls:InputField x:Name="productIdInput"
                                                  Width="100"
                                                  Height="30"
                                                  Margin="10,0,0,0"
                                                  FontSize="16"
                                                  Foreground="White"
                                                  Background="#3B3B3B"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"
+                                Margin="10,0,0,0">
+                            <TextBlock Text="Product Name :"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"/>
+
+                            <userControls:InputField x:Name="productNameInput"
+                                                     Width="200"
+                                                     Height="30"
+                                                     Margin="10,0,0,0"
+                                                     FontSize="16"
+                                                     Foreground="White"
+                                                     Background="#3B3B3B"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="0,10,0,0"
+                                Orientation="Horizontal">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="Product Price :"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"/>
+
+                            <userControls:InputField x:Name="productPriceInput"
+                                                     Width="120"
+                                                     Height="30"
+                                                     Margin="10,0,0,0"
+                                                     FontSize="16"
+                                                     Foreground="White"
+                                                     Background="#3B3B3B"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="10,0,0,0">
+                            <TextBlock Text="Product Catagory :"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"/>
+
+                            <userControls:InputField x:Name="productCategoryInput"
+                                                     Width="200"
+                                                     Height="30"
+                                                     Margin="10,0,0,0"
+                                                     FontSize="16"
+                                                     Foreground="White"
+                                                     Background="#3B3B3B"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 10 0 0">
+                        <TextBlock Text="Quantity :"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"/>
+
+                        <userControls:InputField x:Name="productQuantityInput"
+                                                 Width="100"
+                                                 Height="30"
+                                                 Margin="10,0,0,0"
+                                                 FontSize="16"
+                                                 Foreground="White"
+                                                 Background="#3B3B3B"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
+            </Grid>
         </Grid>
 
         <StackPanel Orientation="Horizontal"
+                    Margin="10,0,0,0"
                     Grid.Row="1"
                     Width="Auto"
                     Height="40">
@@ -138,7 +120,8 @@
                                      HorizontalAlignment="Center"
                                      Content="Save"
                                      HorizontalContentAlignment="Center"
-                                     Width="100"/>
+                                     Width="100"
+                        Click="Save_Click"/>
             </Border>
             <Border Style="{StaticResource HoverBorderStyle}"
                     CornerRadius="15"
@@ -150,7 +133,8 @@
                                      Content="Discard"
                                      Foreground="Red"
                                      HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Stretch"/>
+                                     VerticalContentAlignment="Stretch"
+                        Click="Discard_Click"/>
             </Border>
         </StackPanel>
     </Grid>

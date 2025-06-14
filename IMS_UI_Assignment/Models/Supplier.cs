@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace IMS_UI_Assignment.Models
 {
-    internal class Supplier
+    public class Supplier : PersonModel
     {
+        public string? SupplierCenter { get; set; }
+        public string? Products { get; set; }
+
     }
 }

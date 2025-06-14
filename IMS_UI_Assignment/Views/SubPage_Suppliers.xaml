@@ -65,8 +65,20 @@
             </StackPanel>
 
             <!-- Add the Data Grid or List Here for display supplier -->
-            <Grid>
-                <!-- Suppliers Display Area -->
+            <Grid Grid.Row="2">
+                <Border CornerRadius="15"
+                        Padding="10"
+                        Background="#4c4c4c"
+                        VerticalAlignment="Top">
+                    <DataGrid x:Name="SupplierDataGrid" SelectionChanged="supplierDataGrid_SelectionChanged"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" AutoGenerateColumns="False" CanUserSortColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedUser}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="First Name" Binding="{Binding FName}" Width="*"/>
+                            <DataGridTextColumn Header="Supplier Center" Binding="{Binding SupplierCenter}" Width="*"/>
+                            <DataGridTextColumn Header="Products" Binding="{Binding Products}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

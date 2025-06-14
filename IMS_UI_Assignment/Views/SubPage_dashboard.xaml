@@ -9,15 +9,34 @@
       Title="SubPage_dashboard">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Margin="20">
+        <Grid>
+            <StackPanel>
+                <TextBlock Text="Welcome to the Prime Avatar !"
+                           FontWeight="Black"
+                           Foreground="#5b70b5"
+                          TextAlignment="Center"
+                          FontSize="70"
+                          HorizontalAlignment="Center"
+                          Margin="0, 20, 0, 0"/>
+                <TextBlock Text="Inventory Management System"
+                          Foreground="White"
+                          TextAlignment="Center"
+                          FontSize="40"
+                          HorizontalAlignment="Center"
+                          Margin="0, 20, 0, 0"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="20" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="10"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -26,29 +45,89 @@
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Background="#4c4c4c"
-                    CornerRadius="15">
+            <Border Background="#495ea3"
+                    CornerRadius="20"
+                    Height="50">
+                <Grid Margin="5">
+                    <StackPanel VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock  Text="100"
+                                    FontSize="20"    
+                                    Height="auto"
+                                    Foreground="White"
+                                    FontWeight="Bold"/>
+                        <TextBlock  Text="Total Products"
+                                    FontSize="20"
+                                    Margin="50 0 0 0"
+                                    Height="auto"
+                                    Foreground="White"/>
+
+                    </StackPanel>
+                </Grid>
             </Border>
             <Border Grid.Column="2"
-                    Background="#4c4c4c"
-                    CornerRadius="15">
+                    Background="#2a3c75"
+                    CornerRadius="20"
+                      Height="50">
+                <Grid Margin="5">
+                    <StackPanel VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock  Text="100"
+                                    FontSize="20"    
+                                    Height="auto"
+                                    Foreground="White"
+                                    FontWeight="Bold"/>
+                        <TextBlock  Text="Total Products"
+                                    FontSize="20"
+                                    Margin="50 0 0 0"
+                                    Height="auto"
+                                    Foreground="White"/>
+
+                    </StackPanel>
+                </Grid>
             </Border>
             <Border Grid.Row="2"
-                    Background="#4c4c4c"
-                    CornerRadius="15">
+                    Background="#2a3c75"
+                    CornerRadius="20"
+                      Height="50">
+                <Grid Margin="5">
+                    <StackPanel VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock  Text="100"
+                                    FontSize="20"    
+                                    Height="auto"
+                                    Foreground="White"
+                                    FontWeight="Bold"/>
+                        <TextBlock  Text="Total Products"
+                                    FontSize="20"
+                                    Margin="50 0 0 0"
+                                    Height="auto"
+                                    Foreground="White"/>
+
+                    </StackPanel>
+                </Grid>
             </Border>
             <Border Grid.Column="2" Grid.Row="2"
-                    Background="#4c4c4c"
-                    CornerRadius="15">
+                    Background="#14224f"
+                    CornerRadius="20"
+                    Height="50">
+                <Grid Margin="5">
+                    <StackPanel VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock  Text="100"
+                                    FontSize="20"    
+                                    Height="auto"
+                                    Foreground="White"
+                                    FontWeight="Bold"/>
+                        <TextBlock  Text="Total Products"
+                                    FontSize="20"
+                                    Margin="50 0 0 0"
+                                    Height="auto"
+                                    Foreground="White"/>
+
+                    </StackPanel>
+                </Grid>
             </Border>
         </Grid>
-
-        <Border Grid.Row="1"
-                    Background="#4C4C4C"
-                    CornerRadius="25"
-                    Margin="20"
-                    BorderThickness="0">
-
-        </Border>
     </Grid>
 </Page>

@@ -86,5 +86,13 @@ namespace IMS_UI_Assignment.Views
                 LoadOrders();
             }
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (string.Equals(GlobalVariables.UserRole?.Trim(), "Cashier", StringComparison.OrdinalIgnoreCase))
+            {
+                OrderActionStack.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }

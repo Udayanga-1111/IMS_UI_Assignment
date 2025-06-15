@@ -78,6 +78,7 @@ namespace IMS_UI_Assignment.Views
             else if(string.Equals(GlobalVariables.UserRole?.Trim(), "Cashier", StringComparison.OrdinalIgnoreCase))
             {
                 usersBtn.Visibility = Visibility.Collapsed;
+                reportsBtn.Visibility = Visibility.Collapsed;
 
             }
         }

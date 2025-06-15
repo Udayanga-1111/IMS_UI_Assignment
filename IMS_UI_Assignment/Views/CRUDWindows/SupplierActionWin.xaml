@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="#2B2B2B"
-        Title="SupplierActionWin" ResizeMode="NoResize" Height="250" Width="600">
+        Title="SupplierActionWin" ResizeMode="NoResize" Height="250" Width="630">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

@@ -9,6 +9,62 @@
       d:DesignHeight="800" d:DesignWidth="1200"
       Title="SubPage_Reports">
 
+    <Page.Resources>
+        <Style x:Key="DarkDataGridStyle" TargetType="DataGrid">
+            <!-- General Appearance -->
+            <Setter Property="Background" Value="#FF2D3643"/>
+            <Setter Property="Foreground" Value="#FFE0E0E0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <!-- We will use a border on the row instead -->
+            <Setter Property="HorizontalGridLinesBrush" Value="#FF4A5463"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#FF4A5463"/>
+
+            <!-- Row Colors -->
+            <Setter Property="RowBackground" Value="#FF36404F"/>
+            <Setter Property="AlternatingRowBackground" Value="#FF3F4A5B"/>
+
+            <!-- Style for Column Headers -->
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#FF3F4A5B"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="BorderThickness" Value="0,0,1,1"/>
+                        <Setter Property="BorderBrush" Value="#FF4A5463"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Style for Rows (Adds the bottom border) -->
+            <Setter Property="RowStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="SnapsToDevicePixels" Value="True"/>
+                        <Setter Property="Padding" Value="5,8"/>
+                        <!-- This is the requested gray bottom border with a thickness of 2 -->
+                        <Setter Property="BorderBrush" Value="Gray"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                        <Style.Triggers>
+                            <!-- Highlight row on mouse over -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF505A6B"/>
+                            </Trigger>
+                            <!-- Highlight row when selected -->
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#FF007ACC"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
     <Grid Margin="20">
         <Grid>
             <Grid.RowDefinitions>
@@ -21,27 +77,65 @@
                        FontSize="40"
                        Foreground="White"
                        Margin="20,5,0,0"/>
-
-            <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Left"
-                    x:Name="SearchbarStack"
-                    Height="40"
-                    Width="auto"
-                    Grid.Row="1">
-                <userControl:InputField x:Name="productSearchBar" Placeholder="Select A Report"/>
-                <Border Background="#203d59"
-                    CornerRadius="15"
-                    Width="100"
-                    Margin="10,0,0,0">
-                    <Button x:Name="userSearchBtn" Content="Genarate" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+            
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Border CornerRadius="15">
+                    <ComboBox x:Name="ReportSelectorComboBox" Width="350" Height="35" IsEditable="False" IsReadOnly="True" FontSize="20">
+                        <ComboBoxItem Content="Select a Report..." IsEnabled="False" IsSelected="True"/>
+                        <ComboBoxItem Content="Products Report"/>
+                        <ComboBoxItem Content="Suppliers Report"/>
+                        <ComboBoxItem Content="Low Stock Products Report"/>
+                    </ComboBox>
                 </Border>
-
+                <Border Background="#203d59" CornerRadius="15" Width="100" Height="40" Margin="10,0,0,0">
+                    <Button x:Name="GenerateReportButton" Content="Generate" FontSize="18" Click="GenerateReportButton_Click"/>
+                </Border>
             </StackPanel>
 
 
             <!-- Add the Data Grid or List Here for display supplier -->
-            <Grid>
-                <!-- Suppliers Display Area -->
+            <Grid Grid.Row="2" Margin="0,20,0,0">
+                <!-- Wrapper Border for Rounded Corners -->
+                <Border CornerRadius="10" ClipToBounds="True">
+                    <!-- Products Report Grid -->
+                    <DataGrid x:Name="ProductsDataGrid" Style="{StaticResource DarkDataGridStyle}" Visibility="Collapsed" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding productId}" Width="*"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding productName}" Width="3*"/>
+                            <DataGridTextColumn Header="Category" Binding="{Binding productCategory}" Width="2*"/>
+                            <DataGridTextColumn Header="Price" Binding="{Binding productPrice, StringFormat=C}" Width="*"/>
+                            <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+
+                <!-- Wrapper Border for Rounded Corners -->
+                <Border CornerRadius="10" ClipToBounds="True">
+                    <!-- Suppliers Report Grid -->
+                    <DataGrid x:Name="SuppliersDataGrid" Style="{StaticResource DarkDataGridStyle}" Visibility="Collapsed" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Supplier ID" Binding="{Binding Id}" Width="*"/>
+                            <DataGridTextColumn Header="First Name" Binding="{Binding FName}" Width="2*"/>
+                            <DataGridTextColumn Header="Last Name" Binding="{Binding LName}" Width="2*"/>
+                            <DataGridTextColumn Header="Distribution Center" Binding="{Binding SupplierCenter}" Width="3*"/>
+                            <DataGridTextColumn Header="Products Supplied" Binding="{Binding Products}" Width="3*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+
+                <!-- Wrapper Border for Rounded Corners -->
+                <Border CornerRadius="10" ClipToBounds="True">
+                    <!-- Low Stock Report Grid -->
+                    <DataGrid x:Name="LowStockDataGrid" Style="{StaticResource DarkDataGridStyle}" Visibility="Collapsed" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding productId}" Width="*"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding productName}" Width="3*"/>
+                            <DataGridTextColumn Header="Category" Binding="{Binding productCategory}" Width="2*"/>
+                            <DataGridTextColumn Header="Price" Binding="{Binding productPrice, StringFormat=C}" Width="*"/>
+                            <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using IMS_UI_Assignment.Controllers;
+using Microsoft.Data.SqlClient;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,8 @@ namespace IMS_UI_Assignment.Views
         private string _lowStock;
         private string _supplierCount;
         private string _systemUsers;
+
+        private DashboardController dashboardController;
         private readonly string _connectionString = "Data Source=LAPTOP-J2V071AF\\SQLEXPRESS;Initial Catalog=IMS_GameStore;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
 
@@ -69,8 +72,16 @@ namespace IMS_UI_Assignment.Views
         public SubPage_dashboard()
         {
             InitializeComponent();
-
+            dashboardController = new DashboardController();
+            LoadLowStocks();
             this.DataContext = this;
+        }
+        
+        public void LoadLowStocks()
+        {
+
+            var productList = dashboardController.GetAllLowStocks();
+            LowStockDataGrid.ItemsSource = productList;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

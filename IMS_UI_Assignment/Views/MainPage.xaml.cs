@@ -11,7 +11,7 @@ namespace IMS_UI_Assignment.Views
         public MainPage()
         {
             InitializeComponent();
-            myImage.Source = new BitmapImage(new Uri("C:\\Users\\dilsh\\OneDrive - apiit.lk\\Assignments\\2 sem SDAM\\Project Work\\IMS_UI_Assignment\\IMS_UI_Assignment\\Images\\pngegg.png", UriKind.RelativeOrAbsolute));
+            myImage.Source = new BitmapImage(new Uri("C:\\Users\\dilsh\\source\\repos\\Udayanga-1111\\IMS_UI_Assignment\\IMS_UI_Assignment\\Images\\download (13).png", UriKind.RelativeOrAbsolute));
             Main.Navigate(new SubPage_dashboard());
         }
 

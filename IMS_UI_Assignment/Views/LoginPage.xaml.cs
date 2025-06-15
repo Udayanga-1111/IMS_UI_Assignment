@@ -15,7 +15,7 @@ namespace IMS_UI_Assignment.Views
         public LoginPage()
         {
             InitializeComponent();
-            logoImg.Source = new BitmapImage(new Uri("C:\\Users\\dilsh\\OneDrive - apiit.lk\\Assignments\\2 sem SDAM\\Project Work\\IMS_UI_Assignment\\IMS_UI_Assignment\\Images\\pngegg.png", UriKind.RelativeOrAbsolute));
+            logoImg.Source = new BitmapImage(new Uri("C:\\Users\\dilsh\\source\\repos\\Udayanga-1111\\IMS_UI_Assignment\\IMS_UI_Assignment\\Images\\download (13).png", UriKind.RelativeOrAbsolute));
         }
 
         private void Page_PreviewKeyDown(object sender, KeyEventArgs e)

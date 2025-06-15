@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="#2B2B2B"
-        Title="ProductAddWin" ResizeMode="NoResize" Height="350" Width="600">
+        Title="ProductAddWin" ResizeMode="NoResize" Height="250" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
